@@ -28,14 +28,15 @@
         }
         fun rollDice(){
             val d =Dice(6)
-            d.roll()
+//            d.roll()
             val result:TextView = findViewById(R.id.textView)
-            result.text =d.roll().toString()
-            val toast = Toast.makeText(this, "You Rolled ${result.text} !", Toast.LENGTH_SHORT)
+            var diceResult: Int =d.roll()
+            result.text =diceResult.toString()
+            val toast = Toast.makeText(this, "You Rolled ${diceResult} !", Toast.LENGTH_SHORT)
             toast.show()
             val img :ImageView= findViewById(R.id.imageView)
 
-            val imgre = when(d.roll()){
+            val imgre = when(diceResult){
                 1->R.drawable.dice_1
                 2->R.drawable.dice_2
                 3->R.drawable.dice_3
